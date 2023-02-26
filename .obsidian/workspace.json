@@ -1,0 +1,168 @@
+{
+  "main": {
+    "id": "3ef102bd232b2c88",
+    "type": "split",
+    "children": [
+      {
+        "id": "9c3742249ce6f5ef",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "3d626601090ed073",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "vim/vimtest.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "36ea6b362f972987",
+    "type": "split",
+    "children": [
+      {
+        "id": "1695ad8ed06494bf",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "4f69993d5fbf5bce",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "77508dc3a53c5856",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": true,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "3114405459ce6645",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "9aaba8f39c21964d",
+    "type": "split",
+    "children": [
+      {
+        "id": "8588e0f1c60eb002",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f5ba198e9d919737",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "vim/vimtest.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "239eea332779646e",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "vim/vimtest.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "90d7c6354fb996aa",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "4118c5c6e2f4243a",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "vim/vimtest.md"
+              }
+            }
+          }
+        ],
+        "currentTab": 3
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "obsidian-excalidraw-plugin:Create new drawing": false
+    }
+  },
+  "active": "3d626601090ed073",
+  "lastOpenFiles": [
+    "Excalidraw/first_diagram.excalidraw.md",
+    "Images/first_diagram.excalidraw.png",
+    "vim/vimtest.md",
+    "Pasted image 20230226110701.png",
+    "nb_tips.md",
+    "Images",
+    "Pasted image 20230226105918.png",
+    "Pasted image 20230226110025.png",
+    "Untitled.canvas",
+    "Excalidraw",
+    "linux/barrier.md",
+    "nb_notable_itegration.md",
+    "test",
+    "linux/virt_manager.md"
+  ]
+}
