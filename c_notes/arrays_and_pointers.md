@@ -149,7 +149,7 @@ Below are a few identities to be aware of:
     * `a[p]` is equiv. to `*(p + r)`  (for r <= 3)
 
 The equivalence is shown graphically below:
-[![](Figures/pointer_equivalence.excalidraw.png)]
+![](Figures/pointer_equivalence.excalidraw.png)
 
 ### Pointer Arithmetic
 
