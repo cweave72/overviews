@@ -316,7 +316,7 @@ const char *month_names[] = {
 This declares an array of `char *` pointers where each array element points to
 one of the string constants in the array.
 
-[![](Figures/pointer_array.excalidraw.png)]
+![](Figures/pointer_array.excalidraw.png)
 
 ```c
 char *month;
