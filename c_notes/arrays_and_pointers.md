@@ -36,7 +36,7 @@ int a[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
 
 ### Size vs. Length
 
-The size of an array (i.e. the amount of bytes in memory, an array takes), is
+The size of an array (i.e. the amount of bytes in memory an array consumes), is
 the size of the base type * the number of elements. In the case of `a[10]` above,
 this would be `sizeof(int) * 10`, or 40 bytes (since `sizeof(int)` = 4).
 
@@ -47,7 +47,7 @@ this would be `sizeof(int) * 10`, or 40 bytes (since `sizeof(int)` = 4).
 > using the example above `sizeof(a)` yields 40, not 10.
 
 On the other hand, the *length* of an array is typically taken to mean the
-number of elements in an array. We can use a macro such as below to determine
+number of elements in an array. We can use a macro to determine
 the number of elements in an array:
 
 ```c
@@ -68,8 +68,8 @@ unsigned int num_items = ARRAY_LENGTH(myArray);
 
 ## Pointers
 
-A **pointer** is a variable that contains the address of some object in memory
-and is usually represented as 4 bytes.
+A **pointer** is a variable that contains the address of some object in memory. A pointer itself typically
+uses 4 bytes of memory (i.e. `sizeof(apointer) = 4`.
 
 Consider the following declarations:
 
@@ -78,11 +78,13 @@ unsigned int data = 100;
 unsigned int *pData;
 ```
 
-- The first declaration, creates an object in memory named `data`, sets aside 4
-bytes to hold its value and then loads the value 100 into the memory designated.
+- The first declaration causes the compiler to create an object in memory named
+  `data` and allocates 4 bytes to hold its value. During the initialization
+  phase of the program startup the value 100 is loaded into the memory
+  designated.
 
-- The second, creates a *pointer* that can reference an `unsigned int` type.  It
-is not useful yet, since it does not point to anything.
+- The second declaration creates a *pointer* that can reference an `unsigned
+  int` type.  It is not useful yet, since it does not point to anything yet.
 
 We now introduce the `&` operator.  When placed before the name of a
 variable, the `&` means "address of" the following variable. To see how this
@@ -131,7 +133,7 @@ Consider the following code snippet:
 int a[4] = {0, 1, 2, 3};
 int *p;
 
-p = &a;
+p = a;  /* Note that we don't need &a since an array's name is its pointer. */
 ```
 
 Below are a few identities to be aware of:
@@ -194,7 +196,7 @@ above:
 int a[4] = {0, 1, 2, 3};
 int *p;
 
-p = &a;
+p = a;
 ```
 
 Consider the operation:
