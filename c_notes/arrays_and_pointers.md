@@ -38,7 +38,8 @@ int a[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
 
 The size of an array (i.e. the amount of bytes in memory an array consumes), is
 the size of the base type * the number of elements. In the case of `a[10]` above,
-this would be `sizeof(int) * 10`, or 40 bytes (since `sizeof(int)` = 4).
+this would be `sizeof(int) * 10`, or 40 bytes (since `sizeof(int)` = 4, assuming
+a 32-bit machine).
 
 > **Note**: 
 > The `sizeof()` operator yields the number of bytes required to store an object
@@ -68,8 +69,8 @@ unsigned int num_items = ARRAY_LENGTH(myArray);
 
 ## Pointers
 
-A **pointer** is a variable that contains the address of some object in memory. A pointer itself typically
-uses 4 bytes of memory (i.e. `sizeof(apointer) = 4`.
+A **pointer** is a variable that contains the address of some object in memory.
+A pointer itself typically uses 4 bytes of memory (i.e. `sizeof(apointer) = 4`).
 
 Consider the following declarations:
 
@@ -83,8 +84,15 @@ unsigned int *pData;
   phase of the program startup the value 100 is loaded into the memory
   designated.
 
-- The second declaration creates a *pointer* that can reference an `unsigned
-  int` type.  It is not useful yet, since it does not point to anything yet.
+- The second declaration creates a *pointer* to an `unsigned int` type.  It is
+  not useful yet, since it does not point to anything yet.
+
+> **Note**:
+> When declaring a variable as a pointer, the `*` should be placed with the
+> variable name not the type name. For example, we prefer
+> `unsigned int *pData;` to `unsigned int* pData;` even though either is
+> syntactically correct. This reinforces the concept that the pointer
+> corresponds to the object being created not its type.
 
 We now introduce the `&` operator.  When placed before the name of a
 variable, the `&` means "address of" the following variable. To see how this
@@ -133,13 +141,19 @@ Consider the following code snippet:
 int a[4] = {0, 1, 2, 3};
 int *p;
 
-p = a;  /* Note that we don't need &a since an array's name is its pointer. */
+p = a;  /* See explanation #1 below */
+
 ```
 
-Below are a few identities to be aware of:
+Below are a few things to be aware of:
 
-1. The name of an array by itself is a pointer to the array.
-    * `a` without any brackets can be thought of as having type `int *`
+1. When the name of an array (of any type) is used in an expression, the value
+   of the expression is a pointer to the first object in the array. It is said
+   that the array *decays* to a pointer.  It is sometimes claimed that the name
+   of an array is a pointer to the array. This is not strictly true since:
+    * `sizeof(a)` == 16, while `sizeof(p)` == 4.
+    * Per the above code snipped above, p may now be indexed as an array, i.e.
+      `p[3]` == 3
 2. The address of the first array element is equivalent to a pointer to the
    array. 
     * That is, `&a[0] == p`
@@ -249,7 +263,7 @@ A string constant declared as follows
 ```c
 char str[] = "Hello world!";
 ```
-Internally is represented as the individual characters: 
+Internally is represented as the 13 individual characters: 
 `['H', 'e', 'l', 'l', 'o', ' ', 'w', 'o', 'r', 'l', 'd', '!', '\0']`
 
 Note the last character, `\0'`. This called the *null* character. It is used to
@@ -285,10 +299,11 @@ char *message = "This is a message.";
 There are notable differences:
 1. `char message[] = "...";` The compiler creates a writable array of a size
    just enough to hold the string plus the terminating `\0'`. The initialization
-   characters are copied into the array when the program starts.
+   characters are copied into the array memory when the program starts. This
+   array is mutable (it can be changed freely by software).
 
 2. `char *message = "...";`  Creates an anonymous array of `char`. Any attempt
-   to modify the array has undefined behavior (this is bad). The characters in
+   to modify the array has undefined behavior (i.e. this is bad). The characters in
    the array could be stored in RAM or ROM (i.e. flash, if on an embedded
    processor) - it is at the whim of the compiler. Worse yet, the compiler is
    under no obligation to warn you about this. The fix is explicitly telling the
@@ -305,7 +320,7 @@ warn you about it.
 ## Arrays of Pointers
 
 Since pointers are just themselves variables, you can also declare an array of
-pointers. The most common use case of this is with an array of strings. As an
+pointers. A common use case of this is with an array of strings. As an
 example, let's consider declaring an array of string constants for the months of
 the year:
 
